@@ -1,5 +1,31 @@
 body {
   background-color: #212529;
+  margin: 20px;
+}
+
+button {
+  margin-top: 8px;
+  border-radius: 5px;
+}
+
+hr {
+  margin-top: 20px;
+  color: white;
+}
+
+h4 {
+  color: white;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 15px;
+  transition: 100ms ease-in-out;
+}
+
+h4:hover {
+  box-shadow: 4px 4px 15px 2px black;
 }
 
 p {
@@ -19,84 +45,26 @@ p:hover {
   display: none;
 }
 
-h4 {
-  color: white;
+.error-msg {
   text-align: center;
-  margin-top: 10px;
+  color: white;
 }
 
-/* Spinner classes start. */
-.lds-ellipsis {
-  display: inline-block;
-  position: absolute;
-  left: -36px;
-  width: 5px;
-  height: 5px;
-  transition: opacity 200ms;
-  transition-delay: 200ms;
+.footer-container {
+  margin: auto;
+  width: fit-content;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
 }
 
-.lds-ellipsis div {
-  position: absolute;
-  top: 8px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #fff;
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+.footer-img {
+  cursor: pointer;
+  width: fit-content;
+  transition: 200ms;
 }
 
-.lds-ellipsis div:nth-child(1) {
-  left: 8px;
-  animation: lds-ellipsis1 0.6s infinite;
+.footer-img:hover {
+  opacity: 60%;
 }
-
-.lds-ellipsis div:nth-child(2) {
-  left: 8px;
-  animation: lds-ellipsis2 0.6s infinite;
-}
-
-.lds-ellipsis div:nth-child(3) {
-  left: 32px;
-  animation: lds-ellipsis2 0.6s infinite;
-}
-
-.lds-ellipsis div:nth-child(4) {
-  left: 56px;
-  animation: lds-ellipsis3 0.6s infinite;
-}
-
-@keyframes lds-ellipsis1 {
-  0% {
-      transform: scale(0);
-  }
-  100% {
-      transform: scale(1);
-  }
-}
-
-@keyframes lds-ellipsis3 {
-  0% {
-      transform: scale(1);
-  }
-  100% {
-      transform: scale(0);
-  }
-}
-
-@keyframes lds-ellipsis2 {
-  0% {
-      transform: translate(0, 0);
-  }
-  100% {
-      transform: translate(24px, 0);
-  }
-}
-
-.spinner-container {
-  width: auto;
-  position: absolute;
-  left: 50%;
-  margin-top: 100px;
-}
-/* Spinner classes end. */

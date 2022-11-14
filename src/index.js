@@ -4,6 +4,10 @@ $(document).ready(() => {
 });
 
 function setEvents() {
+  $("#vaccRules").click(() => {
+    $("#tableVaccRules").toggle(100);
+  });
+
   $("#vacc").click(() => {
     $("#tableVacc").toggle(100);
   });
@@ -29,4 +33,12 @@ function showResults() {
 function hideResults() {
   $("#scrapedContent").hide();
   $("#spinner").show();
+}
+
+function showErrorMsg() {
+  $("#errorMsg").show();
+}
+
+function hideErrorMsg() {
+  $("#errorMsg").hide();
 }
