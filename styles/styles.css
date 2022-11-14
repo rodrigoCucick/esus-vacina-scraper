@@ -4,8 +4,40 @@ body {
 }
 
 button {
-  margin-top: 8px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
   border-radius: 5px;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:hover {
+  background-color: #235337;
+  color: #fff;
+  box-shadow: 4px 4px 15px 2px black;
+}
+
+@media (min-width: 768px) {
+  .button {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+  }
 }
 
 hr {
@@ -28,17 +60,24 @@ h4:hover {
   box-shadow: 4px 4px 15px 2px black;
 }
 
-p {
-  font-size: 45px;
-  font-weight: bold;
-  color: white;
-  cursor:pointer;
-  width: fit-content;
-  transition: 100ms ease-in-out;
+input[type=checkbox] {
+  cursor: pointer;
 }
 
-p:hover {
-  transform: translate(20px);
+label {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+svg:nth-child(1) {
+  -webkit-transition: -webkit-transform 100ms ease-in-out;
+  -ms-transition: -ms-transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out;  
+}
+
+.centered-container {
+  margin: auto;
+  width: fit-content;
 }
 
 .display-none {
@@ -50,9 +89,14 @@ p:hover {
   color: white;
 }
 
-.footer-container {
+.footer-anchor {
   margin: auto;
   width: fit-content;
+}
+
+.footer-container {
+  margin: auto;
+  width: auto;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -61,10 +105,51 @@ p:hover {
 
 .footer-img {
   cursor: pointer;
-  width: fit-content;
   transition: 200ms;
 }
 
 .footer-img:hover {
   opacity: 60%;
+}
+
+.info-messages {
+  margin: auto;
+  width: fit-content;
+  color: red;
+  font-weight: bold;
+}
+
+.menu-container {
+  color: white;
+  margin: auto;
+  width: fit-content;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 8px;
+  transition: 100ms ease-in-out;
+}
+
+.menu-container:hover {
+  box-shadow: 4px 4px 15px 2px black;
+}
+
+.table-title {
+  font-size: 45px;
+  font-weight: bold;
+  color: white;
+  cursor:pointer;
+  width: fit-content;
+}
+
+.table-title:hover > svg:nth-child(1) {
+  transform:rotate(45deg);
+  -ms-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+}
+
+.version-string {
+  color: white;
+  text-align: center;
+  font-size: large;
+  margin-top: 12px;
 }
