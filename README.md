@@ -21,6 +21,7 @@ A aplicação sempre retornará os dados da versão mais atual do LEDI (Layout e
 _Posteriormente poderão ser adicionadas mais tabelas ao fluxo._
 
 Também é possível ocultar e exibir tabelas específicas, para isso, basta clicar no nome da tabela:
+
 ![image](https://user-images.githubusercontent.com/16089829/201761911-9585472c-1b5d-4f6f-bcc7-feeb42217ef1.png)
 
 _Exemplo de title exibido ao posicionar o cursor do mouse sobre o nome da tabela._
