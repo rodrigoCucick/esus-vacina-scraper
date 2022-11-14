@@ -3,6 +3,7 @@
 Essa aplicação tem como finalidade condensar em um único local as tabelas mais importantes do fluxo de registro de vacinas do e-SUS, para auxiliar os profissionais da área de saúde (sistemas ou serviços) na tomada de decisões durante o apoio ao cliente ou no desenvolvimento de sistemas com regras compatíveis.
 
 ![image](https://user-images.githubusercontent.com/16089829/201761784-e346fa44-1de2-4d73-9009-e441603da9a6.png)
+
 _Menu principal da aplicação._
 
 # Informações específicas
@@ -21,6 +22,7 @@ _Posteriormente poderão ser adicionadas mais tabelas ao fluxo._
 
 Também é possível ocultar e exibir tabelas específicas, para isso, basta clicar no nome da tabela:
 ![image](https://user-images.githubusercontent.com/16089829/201761911-9585472c-1b5d-4f6f-bcc7-feeb42217ef1.png)
+
 _Exemplo de title exibido ao posicionar o cursor do mouse sobre o nome da tabela._
 
 # Planos futuros
