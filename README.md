@@ -4,6 +4,8 @@ Essa aplicação tem como finalidade condensar em um único local as tabelas mai
 
 ![image](https://user-images.githubusercontent.com/16089829/201761784-e346fa44-1de2-4d73-9009-e441603da9a6.png)
 
+[Clique aqui para utilizar a aplicação.](https://rodrigocucick.github.io/esus-vacina-scraper/)
+
 # Informações específicas
 
 A aplicação sempre retornará os dados da versão mais atual do LEDI (Layout e-SUS APS de Dados e Interface) através de requisições às seguintes URLs:
