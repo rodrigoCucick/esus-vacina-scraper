@@ -26,3 +26,4 @@ Também é possível ocultar e exibir tabelas específicas através do clique no
 # Planos futuros
 - Implementar captcha para impedir que a aplicação seja utilizada por processos automatizados.
 - Analisar outras possíveis tabelas importantes ao fluxo de registro de vacina do e-SUS e implementá-las na aplicação.
+- Otimizar o layout para utilização em dispositivos portáteis.

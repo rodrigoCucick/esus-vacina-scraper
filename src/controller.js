@@ -19,7 +19,7 @@ function isServGroupChecked() { return $("#inputServGroup").prop("checked"); }
 function isReferenciesChecked() {
   return (
     $("#inputDose").prop("checked") || 
-    $("#inpuStrategy").prop("checked") ||
+    $("#inputStrategy").prop("checked") ||
     $("#inputServGroup").prop("checked") ||
     $("#inputVacc").prop("checked")
   );
@@ -29,7 +29,7 @@ function isSomethingChecked() {
   return (
     $("#inputVaccRules").prop("checked") ||
     $("#inputDose").prop("checked") || 
-    $("#inpuStrategy").prop("checked") ||
+    $("#inputStrategy").prop("checked") ||
     $("#inputServGroup").prop("checked") ||
     $("#inputVacc").prop("checked")
   );
@@ -37,18 +37,27 @@ function isSomethingChecked() {
 // End checkboxes.
 
 // Containers.
+function isVersionContainerVisible() {
+  return !($("#versionContainer").css("display") === "none");
+}
+
 function showInfoMsg(msg) {
   $("#infoMsgContainer").html(msg);
   showInfoMsgContainer();
 }
 
+function showVersionStr(versionStr) {
+  $("#version").html(`Versão do LEDI obtida: <b>${versionStr}</b>`);
+  showVersionContainer();
+}
+
 function showInfoMsgContainer() { $("#infoMsgContainer").show(ms); }
 function showVersionContainer() { $("#versionContainer").show(); }
 function showVaccRulesContainer() { $("#vaccRulesContainer").show(); }
-function showVaccContainer() { $("#vaccContainer").show(); }
-function showDoseContainer() { $("#doseContainer").show(); }
-function showStrategyContainer() { $("#strategyContainer").show(); }
-function showServGroupContainer() { $("#servGroupContainer").show(); }
+const showVaccContainer = () => $("#vaccContainer").show();
+const showDoseContainer = () => $("#doseContainer").show();
+const showStrategyContainer = () => $("#strategyContainer").show();
+const showServGroupContainer = () => $("#servGroupContainer").show();
 
 function hideInfoMsgContainer() { $("#infoMsgContainer").hide(ms); }
 function hideVersionContainer() { $("#versionContainer").hide(); }

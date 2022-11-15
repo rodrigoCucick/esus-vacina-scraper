@@ -5,8 +5,14 @@ const selVersion = ".back-link";
 const selVaccRules = ".post-content > table:nth-child(2)";
 const selVacc = "#imunobiologico + table";
 const selDose = "#dose + table";
-const selEstrategy = "#estrategiavacinacao + table";
+const selStrategy = "#estrategiavacinacao + table";
 const selServGroup = "#grupodeatendimento + table";
+
+const tableVaccRulesId = "#tableVaccRules";
+const tableVaccId = "#tableVacc";
+const tableDoseId = "#tableDose";
+const tableStrategyId = "#tableStrategy";
+const tableServGroupId = "#tableServGroup";
 
 function scrape() {
   if (!isSomethingChecked()) {
@@ -30,7 +36,7 @@ function scrapeVaccRules() {
     url: urlVaccRules,
     success: data => {
       createVersionHeader($(data).find(selVersion)[0].title.slice(-5));
-      $("#tableVaccRules").html($(data).find(selVaccRules)[0].innerHTML);
+      $(tableVaccRulesId).html($(data).find(selVaccRules)[0].innerHTML);
       showVaccRulesContainer();
     },
     error: () => showRequestErrorMsg()
@@ -42,35 +48,29 @@ function scrapeReferencies() {
     url: urlReferencies,
     success: data => {
       createVersionHeader($(data).find(selVersion)[0].title.slice(-5));
-
-      if (isVaccChecked()) {
-        $("#tableVacc").html($(data).find(selVacc)[0].innerHTML);
-        showVaccContainer();
-      }
-
-      if (isDoseChecked()) {
-        $("#tableDose").html($(data).find(selDose)[0].innerHTML);
-        showDoseContainer();
-      }
-
-      if (isStrategyChecked()) {
-        $("#tableStrategy").html($(data).find(selEstrategy)[0].innerHTML);
-        showStrategyContainer();
-      }
-
-      if (isServGroupChecked()) {
-        $("#tableServGroup").html($(data).find(selServGroup)[0].innerHTML);
-        showServGroupContainer();
-      }
+      createReferenciesTables(data);
     },
     error: () => showRequestErrorMsg()
   });
 };
 
+function createReferenciesTables(data) {
+  createTable(isVaccChecked(), tableVaccId, $(data).find(selVacc)[0].innerHTML, showVaccContainer);
+  createTable(isDoseChecked(), tableDoseId, $(data).find(selDose)[0].innerHTML, showDoseContainer);
+  createTable(isStrategyChecked(), tableStrategyId, $(data).find(selStrategy)[0].innerHTML, showStrategyContainer);
+  createTable(isServGroupChecked(), tableServGroupId, $(data).find(selServGroup)[0].innerHTML, showServGroupContainer);
+}
+
+function createTable(tableCheckboxFlag, tableId, tableHTML, showContainerFunction) {
+  if (tableCheckboxFlag) {
+    $(tableId).html(tableHTML);
+    showContainerFunction();
+  }
+}
+
 function createVersionHeader(versionStr) {
-  if ($("#versionContainer").css("display") === "none") {
-    $("#version").html(`Versão do LEDI obtida: <b>${versionStr}</b>`);
-    showVersionContainer();
+  if (!isVersionContainerVisible()) {
+    showVersionStr(versionStr);
   }
 }
 

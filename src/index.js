@@ -1,1 +1,1 @@
-$(document).ready(() => { setEvents(); });
+$(document).ready(() => setEvents() );
