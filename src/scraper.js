@@ -35,7 +35,7 @@ function scrapeVaccRules() {
   $.ajax({
     url: urlVaccRules,
     success: data => {
-      createVersionHeader($(data).find(selVersion)[0].title.slice(-5));
+      createVersionHeader($(data).find(selVersion)[0].title.slice(-6));
       $(tableVaccRulesId).html($(data).find(selVaccRules)[0].innerHTML);
       showVaccRulesContainer();
     },
@@ -47,7 +47,7 @@ function scrapeReferencies() {
   $.ajax({
     url: urlReferencies,
     success: data => {
-      createVersionHeader($(data).find(selVersion)[0].title.slice(-5));
+      createVersionHeader($(data).find(selVersion)[0].title.slice(-6));
       createReferenciesTables(data);
     },
     error: () => showRequestErrorMsg()
