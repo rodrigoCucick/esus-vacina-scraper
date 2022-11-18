@@ -27,3 +27,6 @@ Também é possível ocultar e exibir tabelas específicas através do clique no
 - Implementar captcha para impedir que a aplicação seja utilizada por processos automatizados.
 - Analisar outras possíveis tabelas importantes ao fluxo de registro de vacina do e-SUS e implementá-las na aplicação.
 - Otimizar o layout para utilização em dispositivos portáteis.
+
+# Changelog
+18/11/2022 - Implementada funcionalidade para obter o changelog do LEDI.
