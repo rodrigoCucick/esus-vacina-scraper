@@ -46,9 +46,57 @@ function showInfoMsg(msg) {
   showInfoMsgContainer();
 }
 
-function showVersionStr(versionStr) {
-  $("#version").html(`Versão do LEDI obtida: <b>${versionStr}</b>`);
+function createVersionStr(versionStr) {
+  $("#version").html(`
+    Versão do LEDI obtida: 
+    <span
+      class="version-link">
+        <b>${versionStr}</b>
+        <div class="changelog-btn-container">
+          <button
+            class="open-changelog-btn"
+            onclick="scrapeChangelog()"
+            title="Clique para visualizar as alterações mais recentes.">
+            Changelog
+          </button>
+        </div>
+    </span>
+    `);
   showVersionContainer();
+}
+
+function createChangelogDialog(changelogHeaderStr, changelogBodyStr) {
+  $("#changelog-dialog-header").html(changelogHeaderStr);
+  $("#changelog-dialog-body").html(changelogBodyStr);
+  $("#changelog-dialog-body").append(`
+    <div
+      id="changelog-dialog-close-btn"
+      class="dialog-close-btn">
+      <div class="centered-container">
+        <i>URL Requisitada:
+          <a
+            href="https://integracao.esusab.ufsc.br/ledi/documentacao/principais_alteracoes.html"
+            title="Abre em uma nova aba."
+            target="_blank"
+            rel="noreferrer noopener">
+            Principais Alterações
+          </a>
+        </i>
+      </div>
+      <div class="centered-container"><button onClick="hideChangelogDialog()">Ok</button></div>
+    </div>
+  `);
+  showChangelogDialog();
+}
+
+function showChangelogDialog() {
+  $("#modal").show();
+  $("#changelog-dialog").fadeIn(ms * 2);
+}
+
+function hideChangelogDialog() {
+  $("#changelog-dialog").fadeOut(ms * 2);
+  $("#modal").hide();
 }
 
 function showInfoMsgContainer() { $("#infoMsgContainer").show(ms); }
@@ -68,6 +116,7 @@ function hideStrategyContainer() { $("#strategyContainer").hide(); }
 function hideServGroupContainer() { $("#servGroupContainer").hide(); }
 
 function hideAllContainers() {
+  hideChangelogDialog();
   hideInfoMsgContainer();
   hideVersionContainer();
   hideVaccRulesContainer();

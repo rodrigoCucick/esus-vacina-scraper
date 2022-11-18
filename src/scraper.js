@@ -1,5 +1,6 @@
 const urlVaccRules = "https://integracao.esusab.ufsc.br/ledi/documentacao/regras/validar_regras_vacinacao.html";
 const urlReferencies = "https://integracao.esusab.ufsc.br/ledi/documentacao/referencias/dicionario.html";
+const urlChangelog = "https://integracao.esusab.ufsc.br/ledi/documentacao/principais_alteracoes.html";
 
 const selVersion = ".back-link";
 const selVaccRules = ".post-content > table:nth-child(2)";
@@ -7,6 +8,8 @@ const selVacc = "#imunobiologico + table";
 const selDose = "#dose + table";
 const selStrategy = "#estrategiavacinacao + table";
 const selServGroup = "#grupodeatendimento + table";
+const selChangelogHeader = ".post-title";
+const selChangelogBody = ".post-content";
 
 const tableVaccRulesId = "#tableVaccRules";
 const tableVaccId = "#tableVacc";
@@ -35,7 +38,7 @@ function scrapeVaccRules() {
   $.ajax({
     url: urlVaccRules,
     success: data => {
-      createVersionHeader($(data).find(selVersion)[0].title.slice(-6));
+      parseVersionStr(data);
       $(tableVaccRulesId).html($(data).find(selVaccRules)[0].innerHTML);
       showVaccRulesContainer();
     },
@@ -47,8 +50,21 @@ function scrapeReferencies() {
   $.ajax({
     url: urlReferencies,
     success: data => {
-      createVersionHeader($(data).find(selVersion)[0].title.slice(-6));
+      parseVersionStr(data);
       createReferenciesTables(data);
+    },
+    error: () => showRequestErrorMsg()
+  });
+};
+
+function scrapeChangelog() {
+  $.ajax({
+    url: urlChangelog,
+    success: data => {
+      createChangelogDialog(
+        $(data).find(selChangelogHeader)[0].innerHTML,
+        $(data).find(selChangelogBody)[0].innerHTML
+      );
     },
     error: () => showRequestErrorMsg()
   });
@@ -68,9 +84,9 @@ function createTable(tableCheckboxFlag, tableId, tableHTML, showContainerFunctio
   }
 }
 
-function createVersionHeader(versionStr) {
+function parseVersionStr(data) {
   if (!isVersionContainerVisible()) {
-    showVersionStr(versionStr);
+    createVersionStr($(data).find(selVersion)[0].title.match(/[1234567890.]/g).join(''));
   }
 }
 
