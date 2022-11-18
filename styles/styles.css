@@ -1,8 +1,26 @@
 body {
+  height: 100%;
   background-color: #212529;
   margin: 20px;
 }
 
+.centered-container {
+  margin: auto;
+  width: fit-content;
+}
+
+.display-none {
+  display: none;
+}
+
+.version-string {
+  color: white;
+  text-align: center;
+  font-size: large;
+  margin-top: 12px;
+}
+
+/* Button. */
 button {
   margin-top: 20px;
   margin-bottom: 12px;
@@ -39,53 +57,55 @@ button:hover {
     padding: 1rem 2rem;
   }
 }
+/* End button. */
 
+/* Dialogs. */
+.modal-class {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.basic-dialog {
+  position: absolute;
+  width: 800px;
+  height: fit-content;
+  left: calc(50% - 400px);
+  top: 200px;
+  border-radius: 8px;
+  border: 1px solid white;
+  background: #202532;
+  color: white;
+}
+
+.dialog-header {
+  padding: 20px;
+  border-bottom: 1px solid white;
+  text-align: justify;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+  
+}
+
+.dialog-body {
+  padding: 20px;
+  font-size: 14px;
+}
+
+.dialog-close-btn {
+  margin: auto;
+  width: fit-content;
+}
+/* End dialogs. */
+
+/* Footer. */
 hr {
   margin-top: 20px;
-  color: white;
-}
-
-h4 {
-  color: white;
-  text-align: center;
-  width: fit-content;
-  margin: auto;
-  border: 2px solid white;
-  border-radius: 8px;
-  padding: 15px;
-  transition: 100ms ease-in-out;
-}
-
-h4:hover {
-  box-shadow: 4px 4px 15px 2px black;
-}
-
-input[type=checkbox] {
-  cursor: pointer;
-}
-
-label {
-  margin-right: 8px;
-  cursor: pointer;
-}
-
-svg:nth-child(1) {
-  -webkit-transition: -webkit-transform 100ms ease-in-out;
-  -ms-transition: -ms-transform 100ms ease-in-out;
-  transition: transform 100ms ease-in-out;  
-}
-
-.centered-container {
-  margin: auto;
-  width: fit-content;
-}
-
-.display-none {
-  display: none;
-}
-
-.error-msg {
-  text-align: center;
   color: white;
 }
 
@@ -111,14 +131,9 @@ svg:nth-child(1) {
 .footer-img:hover {
   opacity: 60%;
 }
+/* End footer. */
 
-.info-messages {
-  margin: auto;
-  width: fit-content;
-  color: red;
-  font-weight: bold;
-}
-
+/* Main menu. */
 .menu-container {
   color: white;
   margin: auto;
@@ -133,11 +148,29 @@ svg:nth-child(1) {
   box-shadow: 4px 4px 15px 2px black;
 }
 
+input[type=checkbox] {
+  cursor: pointer;
+}
+
+label {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.info-messages {
+  margin: auto;
+  width: fit-content;
+  color: red;
+  font-weight: bold;
+}
+/* End main menu. */
+
+/* Table title. */
 .table-title {
   font-size: 45px;
   font-weight: bold;
   color: white;
-  cursor:pointer;
+  cursor: pointer;
   width: fit-content;
 }
 
@@ -147,9 +180,9 @@ svg:nth-child(1) {
   -webkit-transform:rotate(45deg);
 }
 
-.version-string {
-  color: white;
-  text-align: center;
-  font-size: large;
-  margin-top: 12px;
+svg:nth-child(1) {
+  -webkit-transition: -webkit-transform 100ms ease-in-out;
+  -ms-transition: -ms-transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out;  
 }
+/* End table title. */
