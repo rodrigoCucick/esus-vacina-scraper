@@ -7,6 +7,7 @@ function setEvents() {
   $("#dose").click(() => $("#tableDose").toggle(ms));
   $("#strategy").click(() => $("#tableStrategy").toggle(ms));
   $("#servGroup").click(() => $("#tableServGroup").toggle(ms));
+  window.onscroll = () => checkPageScroll();
 }
 
 // Checkboxes.
@@ -126,3 +127,22 @@ function hideAllContainers() {
   hideServGroupContainer();
 }
 // End containers.
+
+// Top scroll.
+function showTopButton() { $("#topButton").show(); }
+function hideTopButton() { $("#topButton").hide(); }
+
+function checkPageScroll() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    showTopButton();
+  } else {
+    hideTopButton();
+  }
+}
+
+function scrollToPageTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+  hideTopButton();
+}
+// End top scroll.

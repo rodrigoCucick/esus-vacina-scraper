@@ -27,6 +27,14 @@ Também é possível ocultar e exibir tabelas específicas através do clique no
 - Implementar captcha para impedir que a aplicação seja utilizada por processos automatizados.
 - Analisar outras possíveis tabelas importantes ao fluxo de registro de vacina do e-SUS e implementá-las na aplicação.
 - Otimizar o layout para utilização em dispositivos portáteis.
+- Adicionar scrape de tabelas PNI do RNDS. **ALTA PRIORIDADE!**
 
 # Changelog
-18/11/2022 - Implementada funcionalidade para obter o changelog do LEDI.
+**v1.2 - 25/11/2022**
+- Implementado botão para rolar para o topo da página caso o scroll da página não esteja no topo.
+
+**v1.1 - 18/11/2022**
+- Implementada funcionalidade para obter o changelog do LEDI.
+
+**v1.0 - 14/11/2022**
+- Versão inicial disponibilizada.
